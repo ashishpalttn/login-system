@@ -3,14 +3,6 @@
 const { createUser, findUserByEmail } = require('../models/userModel');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { Pool } = require('pg');
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'postgres',
-  password: 'newpassword',
-  port: 5432,
-});
 
 const register = async (req, res) => {
   const { email, password } = req.body;
